@@ -1,0 +1,8 @@
+.hero-unit
+  - if user_signed_in?
+    %h1= "Bievenido #{current_user.name}"
+    = link_to "Log Out", destroy_user_session_path, :class => "btn btn-danger btn-large"
+    %p= image_tag("dancing.gif", :class => "img-polaroid")
+  - else
+    %h1 Bievenido
+    = link_to "Log In with Koombea", new_user_session_path, :class => "btn btn-primary btn-large"
